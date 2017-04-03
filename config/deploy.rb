@@ -2,7 +2,7 @@
 lock "3.8.0"
 
 set :application, "deploy_test"
-set :repo_url, "git@github.com:taylorturneriv/deploy_test.git"
+set :repo_url, "ssh://git@github.com:taylorturneriv/deploy_test.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
