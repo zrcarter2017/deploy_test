@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Investor:</strong>
+  <%= @note.investor_id %>
+</p>
+
+<p>
+  <strong>Invest date:</strong>
+  <%= @note.invest_date %>
+</p>
+
+<p>
+  <strong>Note type:</strong>
+  <%= @note.note_type %>
+</p>
+
+<p>
+  <strong>Dollar invest:</strong>
+  <%= @note.dollar_invest %>
+</p>
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>
