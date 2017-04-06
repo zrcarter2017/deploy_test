@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :notes
   resources :investors
-  resources :welcomes
   resources :users
 
   root "investors#index"
