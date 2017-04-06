@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Investors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Investor</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Email</th>
+      <th>Entity name</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Rep</th>
+      <th>Broker</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @investors.each do |investor| %>
+      <tr>
+        <td><%= investor.investor_id %></td>
+        <td><%= investor.address %></td>
+        <td><%= investor.city %></td>
+        <td><%= investor.state %></td>
+        <td><%= investor.zip %></td>
+        <td><%= investor.email %></td>
+        <td><%= investor.entity_name %></td>
+        <td><%= investor.first_name %></td>
+        <td><%= investor.last_name %></td>
+        <td><%= investor.rep %></td>
+        <td><%= investor.broker %></td>
+        <td><%= link_to 'Show', investor %></td>
+        <td><%= link_to 'Edit', edit_investor_path(investor) %></td>
+        <td><%= link_to 'Destroy', investor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Investor', new_investor_path %>
