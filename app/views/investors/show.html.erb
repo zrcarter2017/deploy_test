@@ -3,6 +3,42 @@
 <%= link_to 'Edit', edit_investor_path(@investor) %> |
 <%= link_to 'Back', investors_path %>
 
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Investor ID</th>
+        <th>Address </th>
+        <th>City </th>
+        <th>State </th>
+        <th>Zip</th>
+        <th>Email </th>
+        <th>Entity Name </th>
+        <th>First Name</th>
+        <th>Last Name </th>
+        <th>Rep</th>
+        <th>Broker</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @investor.investor_id %></td>
+        <td><%= @investor.address %></td>
+        <td><%= @investor.city %></td>
+        <td><%= @investor.state %></td>
+        <td><%= @investor.zip %></td>
+        <td><%= @investor.email %></td>
+        <td><%= @investor.entity_name %></td>
+        <td><%= @investor.first_name %></td>
+        <td><%= @investor.last_name %></td>
+        <td><%= @investor.rep %></td>
+        <td><%= @investor.broker %></td>
+    </tbody>
+  </table>
+</body>
+
+<!-- 
 <p>
   <strong>Investor:</strong>
   <%= @investor.investor_id %>
@@ -57,7 +93,7 @@
   <strong>Broker:</strong>
   <%= @investor.broker %>
 </p>
-
+ -->
 
 <body>
     <table>
