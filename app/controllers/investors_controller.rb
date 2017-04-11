@@ -10,6 +10,7 @@ class InvestorsController < ApplicationController
   # GET /investors/1
   # GET /investors/1.json
   def show
+    @notes = Investor.Notes
   end
 
   # GET /investors/new
