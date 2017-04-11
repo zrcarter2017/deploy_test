@@ -71,6 +71,11 @@
         <% @investor.notes.each do |note| %>
           <tr>
             <td><%= note.investor_id %></td>
+            <td><%= note.invest_date %></td>
+            <td><%= note.note_type %></td>
+            <td><%= note.dollar_invest %></td>
+            <td><%= note.created_at %></td>
+            <td><%= note.updated_at %></td>
           </tr>
         <% end %>
       </tbody>
