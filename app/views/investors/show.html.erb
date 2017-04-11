@@ -25,6 +25,8 @@ table, th, td {
         <th>Last Name </th>
         <th>Rep</th>
         <th>Broker</th>
+        <th>Create Date</th>
+        <th>Update Date</th>
       </tr>
     </thead>
 
@@ -41,6 +43,8 @@ table, th, td {
         <td><%= @investor.last_name %></td>
         <td><%= @investor.rep %></td>
         <td><%= @investor.broker %></td>
+        <td><%= @investor.created_at %></td>
+        <td><%= @investor.updated_at %></td>
     </tbody>
   </table>
 </body>
@@ -53,13 +57,13 @@ table, th, td {
     <table>
       <thead>
         <tr>
-          <th>Record </th>
+          <th>Record</th>
           <th>Dollar Investment</th>
           <th>Invest Date </th>
-          <th>Note Type </th>
-          <th>Dollar Investment </th>
-          <th>Create Date </th>
-          <th>Update Date </th>
+          <th>Note Type</th>
+          <th>Dollar Investment</th>
+          <th>Create Date</th>
+          <th>Update Date</th>
         </tr>
       </thead>
 
