@@ -9,8 +9,7 @@
 
 <% if current_user %>
   Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %> | <%= link_to 'New User', '/signup' %>
-<% else %>
-  <%= link_to 'Login', '/login' %>
+
 <% end %>
 
 <%= yield %>
