@@ -53,6 +53,7 @@ table, th, td {
     <table>
       <thead>
         <tr>
+          <th>Record </th>
           <th>Dollar Investment</th>
           <th>Invest Date </th>
           <th>Note Type </th>
@@ -65,6 +66,10 @@ table, th, td {
       <tbody>
         <% @investor.notes.each do |note| %>
           <tr>
+            <td><%= link_to 'Show', note %><br>
+              <%= link_to 'Edit', edit_note_path(note) %><br>
+              <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
             <td><%= note.investor_id %></td>
             <td><%= note.invest_date %></td>
             <td><%= note.note_type %></td>
