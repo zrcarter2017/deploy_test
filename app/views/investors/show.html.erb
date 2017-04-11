@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Edit', edit_investor_path(@investor) %> |
+<%= link_to 'Back', investors_path %>
+
 <p>
   <strong>Investor:</strong>
   <%= @investor.investor_id %>
@@ -55,5 +58,22 @@
   <%= @investor.broker %>
 </p>
 
-<%= link_to 'Edit', edit_investor_path(@investor) %> |
-<%= link_to 'Back', investors_path %>
+
+<body>
+    <table id="notes">
+      <thead>
+        <tr>
+          <th>Dollar Investment </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @investor.notes.each do |note| %>
+
+            <td><%= investor.note.dollar_invest %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</body>
+
