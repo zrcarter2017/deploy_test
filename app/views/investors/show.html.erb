@@ -60,20 +60,19 @@
 
 
 <body>
-    <table id="notes">
+    <table>
       <thead>
         <tr>
-          <th>Dollar Investment </th>
+          <th>Dollar Investment</th>
         </tr>
       </thead>
 
       <tbody>
-        <% @notes.each do |note| %>
-
-            <td><%= @note.dollar_invest %></td>
+        <% @investor.notes.each do |note| %>
+          <tr>
+            <td><%= note.investor_id %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 </body>
-
