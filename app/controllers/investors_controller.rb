@@ -1,4 +1,7 @@
 class InvestorsController < ApplicationController
+  
+  before_filter :authorize
+
   before_action :set_investor, only: [:show, :edit, :update, :destroy]
 
   # GET /investors

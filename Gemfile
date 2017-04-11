@@ -27,6 +27,7 @@ gem 'coffee-rails', '~> 4.2'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+
 #datatable gems for data view
 gem 'jquery-datatables-rails', '~> 3.4.0'
 
