@@ -3,17 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-	$('#example').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            {
-                extend: 'copyHtml5',
-                exportOptions: {
-                 columns: ':contains("Office")'
-                }
-            },
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
-        ]
-    } );
+	$('#investors').DataTable( {
+    buttons: [
+        'csv'
+	    ]
+	} );
