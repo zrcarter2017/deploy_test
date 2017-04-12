@@ -5,7 +5,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body align="right">
+<body id="session_body" align="right">
 
 <% if current_user %>
   Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %> | <%= link_to 'New User', '/signup' %> | <%= link_to 'New Investor', new_investor_path %>
