@@ -4,3 +4,12 @@
 
 jQuery ->
 	$('#investors').dataTable()
+
+	$(document).ready(function() {
+    $('#investors').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
