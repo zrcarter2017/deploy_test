@@ -3,4 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-    $('#investors').DataTable();
+    $('#investors').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
