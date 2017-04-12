@@ -3,13 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-	$('#investors').dataTable()
+	$('#investors').DataTable()
 
-	$(document).ready(function() {
-    $('#investors').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-} );
