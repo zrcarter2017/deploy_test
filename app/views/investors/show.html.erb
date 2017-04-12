@@ -6,7 +6,6 @@ table, th, td {
 
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_investor_path(@investor) %> |
 <%= link_to 'Back', investors_path %>
 
 <h1>Investor Data </h1>
@@ -14,6 +13,7 @@ table, th, td {
   <table>
     <thead>
       <tr>
+        <th>Record </th>
         <th>Investor ID</th>
         <th>Address </th>
         <th>City </th>
@@ -32,6 +32,7 @@ table, th, td {
 
     <tbody>
       <tr>
+        <td><%= link_to 'Edit', edit_investor_path(@investor) %></td>
         <td><%= @investor.investor_id %></td>
         <td><%= @investor.address %></td>
         <td><%= @investor.city %></td>
