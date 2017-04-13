@@ -22,3 +22,6 @@
 config/database.yml
 config/secrets.yml
 config/deploy/production.rb
+lib/assets/dist_schedule/dist_schedule.py
+lib/assets/dist_schedule/distribution.py
+lib/assets/dist_schedule/distribution.pyc
