@@ -22,4 +22,7 @@
 config/database.yml
 config/secrets.yml
 config/deploy/production.rb
-scripts/dist_schedule/*
+scripts/dist_schedule/dist_schedule.py
+scripts/dist_schedule/distribution.py
+scripts/dist_schedule/distribution.pyc
+scripts/dist_schedule/run_once.py
