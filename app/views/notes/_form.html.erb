@@ -15,7 +15,7 @@
     <%= f.label :investor_id %>
     <%= f.text_field :investor_id %>
   </div>
-
+s
   <div class="field">
     <%= f.label :invest_date %>
     <%= f.date_select :invest_date %>
@@ -33,5 +33,6 @@
 
   <div class="actions">
     <%= f.submit %>
+    <%= `python #{Rails.root + "/scripts/dist_schedule.py"}` %>
   </div>
 <% end %>
