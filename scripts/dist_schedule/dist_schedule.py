@@ -20,17 +20,17 @@ cursor.execute("""SELECT
 	`notes`.`note_type` AS `note_type`,
 	`notes`.`invest_date` AS `invest_date`,
 	concat(`notes`.`investor_id`,'_',`notes`.`note_type`) AS `id`,
-	`note_lookup`.`note_interest_rate` AS `interest_rate`,
+	`notetypes`.`note_interest_rate` AS `interest_rate`,
 	`notes`.`dollar_invest` AS `dollar_investment`,
-	(`notes`.`note_type` * 4) AS `quarter_count` FROM (`notes` left join `note_lookup` on((`notes`.`note_type` = `note_lookup`.`note_type`))) """)  # execute sql query
+	(`notes`.`note_type` * 4) AS `quarter_count` FROM (`notes` left join `notetypes` on((`notes`.`note_type` = `notetypes`.`note_type`))) """)  # execute sql query
 data = pd.DataFrame(cursor.fetchall()) # fetch the data
 data = distribution.data_column_names(data)
 
 
 # pull current unique note_id
 cursor.execute("""SELECT DISTINCT 
-	`views`.`note_id` AS `note_id` 
-	FROM views""") #sql query of current distributions in database
+	`distributions`.`note_id` AS `note_id` 
+	FROM distributions""") #sql query of current distributions in database
 dist = pd.DataFrame(cursor.fetchall())
 dist = distribution.dist_column_name(dist)
 
