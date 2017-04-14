@@ -75,3 +75,5 @@ class InvestorsController < ApplicationController
       params.require(:investor).permit(:investor_id, :address, :city, :state, :zip, :email, :entity_name, :first_name, :last_name, :rep, :broker)
     end
 end
+
+
