@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @distribution.note_id %>
+</p>
+
+<p>
+  <strong>Quart num:</strong>
+  <%= @distribution.quart_num %>
+</p>
+
+<p>
+  <strong>Dist date:</strong>
+  <%= @distribution.dist_date %>
+</p>
+
+<p>
+  <strong>Cum sum days:</strong>
+  <%= @distribution.cum_sum_days %>
+</p>
+
+<p>
+  <strong>Quart days:</strong>
+  <%= @distribution.quart_days %>
+</p>
+
+<p>
+  <strong>Dollar:</strong>
+  <%= @distribution.dollar %>
+</p>
+
+<p>
+  <strong>Interest rate:</strong>
+  <%= @distribution.interest_rate %>
+</p>
+
+<p>
+  <strong>Distribution:</strong>
+  <%= @distribution.distribution %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @distribution.paid %>
+</p>
+
+<%= link_to 'Edit', edit_distribution_path(@distribution) %> |
+<%= link_to 'Back', distributions_path %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  note_id: MyString
+  quart_num: MyString
+  dist_date: MyString
+  cum_sum_days: MyString
+  quart_days: MyString
+  dollar: MyString
+  interest_rate: MyString
+  distribution: MyString
+  paid: MyString
+
+two:
+  note_id: MyString
+  quart_num: MyString
+  dist_date: MyString
+  cum_sum_days: MyString
+  quart_days: MyString
+  dollar: MyString
+  interest_rate: MyString
+  distribution: MyString
+  paid: MyString

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :distributions
   resources :notetypes
   resources :investors
   resources :notes
