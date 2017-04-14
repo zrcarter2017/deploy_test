@@ -33,6 +33,7 @@
 
   <div class="actions">
     <%= f.submit %>
-    <%= `python #{Rails.root + "/scripts/dist_schedule.py"}` %>
+    <!-- need to figure out the below line such that on submit the python script runs -->
+    <%=`python #{Rails.root + "/scripts/dist_schedule.py"}` %>
   </div>
 <% end %>
