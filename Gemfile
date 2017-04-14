@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'rubypython', '~> 0.6.3'
 
 gem 'listen', '~> 3.0.5'
 
