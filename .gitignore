@@ -22,4 +22,4 @@
 config/database.yml
 config/secrets.yml
 config/deploy/production.rb
-scripts/dist_schedule/
+scripts/dist_schedule/*
