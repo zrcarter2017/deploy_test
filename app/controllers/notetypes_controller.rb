@@ -1,4 +1,7 @@
 class NotetypesController < ApplicationController
+  
+  before_filter :authorize
+
   before_action :set_notetype, only: [:show, :edit, :update, :destroy]
 
   # GET /notetypes
