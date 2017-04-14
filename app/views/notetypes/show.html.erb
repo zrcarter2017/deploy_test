@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Note type:</strong>
+  <%= @notetype.note_type %>
+</p>
+
+<p>
+  <strong>Note program:</strong>
+  <%= @notetype.note_program %>
+</p>
+
+<p>
+  <strong>Note interest rate:</strong>
+  <%= @notetype.note_interest_rate %>
+</p>
+
+<%= link_to 'Edit', edit_notetype_path(@notetype) %> |
+<%= link_to 'Back', notetypes_path %>

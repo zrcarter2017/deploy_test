@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  note_type: MyString
+  note_program: MyString
+  note_interest_rate: MyString
+
+two:
+  note_type: MyString
+  note_program: MyString
+  note_interest_rate: MyString

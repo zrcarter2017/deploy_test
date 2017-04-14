@@ -1,0 +1,32 @@
+<%= form_for(notetype) do |f| %>
+  <% if notetype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notetype.errors.count, "error") %> prohibited this notetype from being saved:</h2>
+
+      <ul>
+      <% notetype.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :note_type %>
+    <%= f.text_field :note_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :note_program %>
+    <%= f.text_field :note_program %>
+  </div>
+
+  <div class="field">
+    <%= f.label :note_interest_rate %>
+    <%= f.text_field :note_interest_rate %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
