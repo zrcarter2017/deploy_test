@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :note_type %>
-    <%= f.number_field :note_type %>
+    <%= f.collection_select :note_type, Notetype.all, :note_type, :note_program, prompt: true %>
   </div>
 
   <div class="field">
