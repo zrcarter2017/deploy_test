@@ -33,7 +33,7 @@ table, th, td {
       <tbody>
         <tr>
           <td><%= link_to 'Edit', edit_investor_path(@investor) %>
-            <%= link_to 'Destroy', destroy_investor_path, method: :delete, data: { confirm: 'Are you sure? In order to delete an investor record you must first delete the investors notes...' } %>
+            <%= link_to 'Destroy', @investor.destroy, method: :delete, data: { confirm: 'Are you sure? In order to delete an investor record you must first delete the investors notes...' } %>
           </td>
           <td><%= @investor.investor_id %></td>
           <td><%= @investor.address %></td>
