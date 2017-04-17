@@ -31,11 +31,8 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
 
-
-    # script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
-    # `python #{script_path}`
-    # `python /home/deploy/deploy_test/current/scripts/dist_schedule.py`
-    `python deploy_test/current/scripts/dist_schedule.py`
+    script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
+    `python #{script_path}`
 
     respond_to do |format|
       if @note.save
