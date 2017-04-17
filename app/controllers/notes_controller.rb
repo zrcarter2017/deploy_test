@@ -46,7 +46,6 @@ class NotesController < ApplicationController
       end
     end
 
-    flash[:notice] = python_response
   end
 
   # PATCH/PUT /notes/1
