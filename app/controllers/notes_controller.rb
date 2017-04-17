@@ -18,6 +18,12 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
+
+    script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
+    puts script_path
+    python_response = `python #{script_path}`
+    puts python_response
+    
   end
 
   # GET /notes/1/edit
@@ -30,10 +36,10 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
 
-    script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
-    puts script_path
-    python_response = `python #{script_path}`
-    puts python_response
+    # script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
+    # puts script_path
+    # python_response = `python #{script_path}`
+    # puts python_response
     
 
     respond_to do |format|
