@@ -31,6 +31,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
 
+
     respond_to do |format|
       if @note.save
         script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
@@ -77,6 +78,6 @@ class NotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
-      params.require(:note).permit(:investor_id, :invest_date, :note_type, :dollar_invest)
+      params.require(:note).permit(:investor_id, :invest_date, :note_type, :dollar_invest, :note_id)
     end
 end
