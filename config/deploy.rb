@@ -26,8 +26,8 @@ set :deploy_to, "/home/deploy/deploy_test"
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
-
-append :linked_files, "config/database.yml", "config/secrets.yml", "scripts/distribution.py", "scripts/dist_schedule.py", "scripts/run_once.py", "scripts/print_data.py"
+# "scripts/distribution.py", "scripts/dist_schedule.py", "scripts/run_once.py", "scripts/print_data.py"
+append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
 # Default value for default_env is {}
