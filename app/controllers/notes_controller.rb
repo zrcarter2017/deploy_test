@@ -24,28 +24,17 @@ class NotesController < ApplicationController
   def edit
   end
 
-def create
-  @example = Example.new(example_params)
-  name = @example.name
-  script_path = File.join(Rails.root, "scripts", "example.py")
-  puts script_path
-  python_response = `python #{script_path} #{name}`
-  puts python_response
-  redirect_to :root, notice: python_response
-end
-
 
   # POST /notes
   # POST /notes.json
   def create
     @note = Note.new(note_params)
 
-    name = @example.name
     script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
     puts script_path
     python_response = `python #{script_path}`
     puts python_response
-    # redicrect_to :root, notice: python_response
+    # redirect_to :root, notice: python_response
 
     respond_to do |format|
       if @note.save
