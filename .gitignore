@@ -27,3 +27,4 @@ scripts/distribution.py
 scripts/distribution.pyc
 scripts/run_once.py
 scripts/print_data.py
+scripts/distribution.pyc.example
