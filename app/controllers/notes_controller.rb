@@ -31,9 +31,6 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
 
-    script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
-    `python #{script_path}`
-
     respond_to do |format|
       if @note.save
         format.html { redirect_to @note, notice: 'Note was successfully created.' }
@@ -43,6 +40,9 @@ class NotesController < ApplicationController
         format.json { render json: @note.errors, status: :unprocessable_entity }
       end
     end
+
+    script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
+    `python #{script_path}`
 
   end
 
