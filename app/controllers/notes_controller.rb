@@ -34,7 +34,7 @@ class NotesController < ApplicationController
     puts script_path
     python_response = `python #{script_path}`
     puts python_response
-    # redirect_to :root, notice: python_response
+    
 
     respond_to do |format|
       if @note.save
@@ -45,6 +45,8 @@ class NotesController < ApplicationController
         format.json { render json: @note.errors, status: :unprocessable_entity }
       end
     end
+
+    redirect_to :root, notice: python_response
   end
 
   # PATCH/PUT /notes/1
