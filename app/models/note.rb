@@ -2,8 +2,8 @@ class Note < ApplicationRecord
 
   belongs_to :investor
 
-	def note_id
-	  "#{self.address_1}, #{self.address_2}, #{self.city}"
+	def create_note_id
+	  "#{self.id},#{self.investor_id}_#{self.note_type}"
 	end
 
 end
