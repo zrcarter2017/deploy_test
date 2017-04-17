@@ -1,42 +1,47 @@
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Distributions</h1>
-
-<table id="distributions" class="display" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Note</th>
-      <th>Quart num</th>
-      <th>Dist date</th>
-      <th>Cum sum days</th>
-      <th>Quart days</th>
-      <th>Dollar</th>
-      <th>Interest rate</th>
-      <th>Distribution</th>
-      <th>Paid</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @distributions.each do |distribution| %>
+  <table id="distributions" class="display" cellspacing="0" width="100%">
+    <thead>
       <tr>
-        <td><%= distribution.note_id %></td>
-        <td><%= distribution.quart_num %></td>
-        <td><%= distribution.dist_date %></td>
-        <td><%= distribution.cum_sum_days %></td>
-        <td><%= distribution.quart_days %></td>
-        <td><%= distribution.dollar %></td>
-        <td><%= distribution.interest_rate %></td>
-        <td><%= distribution.distribution %></td>
-        <td><%= distribution.paid %></td>
-        <td><%= link_to 'Show', distribution %></td>
-        <td><%= link_to 'Edit', edit_distribution_path(distribution) %></td>
-        <td><%= link_to 'Destroy', distribution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Note</th>
+        <th>Quart num</th>
+        <th>Dist date</th>
+        <th>Cum sum days</th>
+        <th>Quart days</th>
+        <th>Dollar</th>
+        <th>Interest rate</th>
+        <th>Distribution</th>
+        <th>Paid</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @distributions.each do |distribution| %>
+        <tr>
+          <td><%= distribution.note_id %></td>
+          <td><%= distribution.quart_num %></td>
+          <td><%= distribution.dist_date %></td>
+          <td><%= distribution.cum_sum_days %></td>
+          <td><%= distribution.quart_days %></td>
+          <td><%= distribution.dollar %></td>
+          <td><%= distribution.interest_rate %></td>
+          <td><%= distribution.distribution %></td>
+          <td><%= distribution.paid %></td>
+          <td><%= link_to 'Show', distribution %></td>
+          <td><%= link_to 'Edit', edit_distribution_path(distribution) %></td>
+          <td><%= link_to 'Destroy', distribution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <br>
 
