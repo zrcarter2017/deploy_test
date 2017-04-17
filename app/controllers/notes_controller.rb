@@ -46,7 +46,7 @@ class NotesController < ApplicationController
       end
     end
 
-    redirect_to :root, notice: python_response
+    notice: python_response
   end
 
   # PATCH/PUT /notes/1
