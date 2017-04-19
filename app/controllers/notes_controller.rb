@@ -19,9 +19,6 @@ class NotesController < ApplicationController
   def new
     @note = Note.new
 
-    Note.pickupamount = params[:investor_id] + '_' + params[:invest_date] + '_' params[:note_type]
-    Note.save!
-
   end
 
   # GET /notes/1/edit
@@ -34,6 +31,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
 
+    Note.note_id = (params[:investor_id].to_s).concat('_').concat(params[:invest_date].to_s).concat('_').concat(params[:note_type].to_s)
 
     respond_to do |format|
       if @note.save
