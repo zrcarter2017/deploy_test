@@ -53,7 +53,7 @@
 
   <div class="field">
     <%= f.label :paid %>
-    <%= f.text_field :paid %>
+    <%= f.select :paid, ['YES', 'NO'], :selected => 'NO'%>
   </div>
 
   <div class="actions">
