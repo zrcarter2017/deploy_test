@@ -31,13 +31,10 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
 
-    # Note.note_id = (params[:investor_id].to_s).concat('_').concat(params[:invest_date].to_s).concat('_').concat(params[:note_type].to_s)
-    # Note.save!
-
     respond_to do |format|
       if @note.save
         script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
-        `python #{script_path}`
+        `python #{script_pat  h}`
         format.html { redirect_to @note, notice: 'Note was successfully created.' }
         format.json { render :show, status: :created, location: @note }
       else

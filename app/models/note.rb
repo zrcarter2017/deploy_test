@@ -1,9 +1,11 @@
 class Note < ApplicationRecord
 
   belongs_to :investor
+	
+  before_save :concatenate_details
 
-	# def create_note_id
-	#   "#{self.id},#{self.investor_id}_#{self.note_type}"
-	# end
+  def note_id
+	self.note_id = (params[:investor_id].to_s).concat('_').concat(params[:invest_date].to_s).concat('_').concat(params[:note_type].to_s)
+  end
 
 end
