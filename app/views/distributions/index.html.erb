@@ -6,7 +6,10 @@ table, th, td {
 
 <p id="notice"><%= notice %></p>
 
+
+
 <h1>Distributions</h1>
+  <div id="the_slider"></div>
   <table id="distributions" class="display" cellspacing="0" width="100%">
     <thead>
       <tr>
@@ -26,6 +29,8 @@ table, th, td {
     <tbody>
       <% @distributions.each do |distribution| %>
         <tr>
+          <td><%= distribution.hidden_field :data_1 %></td>
+          <td><%= distribution.hidden_field :data_2 %></td>
           <td><%= distribution.note_id %></td>
           <td><%= distribution.quart_num %></td>
           <td><%= distribution.dist_date %></td>
