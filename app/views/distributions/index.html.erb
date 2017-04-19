@@ -12,6 +12,7 @@ table, th, td {
   <table id="distributions" class="display" cellspacing="0" width="100%">
     <thead>
       <tr>
+        <th>Record Actions</th>
         <th>Note</th>
         <th>Quart num</th>
         <th>Dist date</th>
@@ -28,6 +29,9 @@ table, th, td {
     <tbody>
       <% @distributions.each do |distribution| %>
         <tr>
+          <td><%= link_to 'Show', distribution %>
+          <%= link_to 'Edit', edit_distribution_path(distribution) %>
+          <%= link_to 'Destroy', distribution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <td><%= distribution.note_id %></td>
           <td><%= distribution.quart_num %></td>
           <td><%= distribution.dist_date %></td>
@@ -37,9 +41,6 @@ table, th, td {
           <td><%= distribution.interest_rate %></td>
           <td><%= distribution.distribution %></td>
           <td><%= distribution.paid %></td>
-          <td><%= link_to 'Show', distribution %></td>
-          <td><%= link_to 'Edit', edit_distribution_path(distribution) %></td>
-          <td><%= link_to 'Destroy', distribution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
