@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'jquery-ui-rails'
 
 gem 'listen', '~> 3.0.5'
 
