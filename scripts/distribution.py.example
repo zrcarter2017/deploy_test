@@ -101,7 +101,12 @@ def calc_true_distribution_date(append_to, bgn_date, cum_sum_days_num):
         for day_num in cum_sum_days_num[0]:
             day = date + timedelta(days = int(str(day_num)))
             var = day.day - 15
-            append_to.append(date + timedelta(days = int(str(day_num))) - timedelta(days = int(str(var))) + dateutil.relativedelta.relativedelta(months=1))
+            if day_num < 100:
+                data_point = date + timedelta(days = int(str(day_num))) - timedelta(days = int(str(var))) + dateutil.relativedelta.relativedelta(months=1)
+                append_to.append(data_point)
+            elif day_num >= 100:
+                data_point = date + timedelta(days = int(str(day_num))) - timedelta(days = int(str(var))) + dateutil.relativedelta.relativedelta(months=2)
+                append_to.append(data_point)
 
 def insert_dist_data(con, cursor, ziplist):
     """
