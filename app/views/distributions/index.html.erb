@@ -12,12 +12,12 @@ $(document).ready(function() {
         max: 500,
         values: [250, 450],
         slide: function(event, ui) {
-            $("#thing_dist_date").val(ui.values[0]);
-            $("#thing_dist_date").val(ui.values[1]);
+            $("#thing_data_1").val(ui.values[0]);
+            $("#thing_data_2").val(ui.values[1]);
         }
     });
-    $("#thing_dist_date").val(slider.slider("values")[0]);
-    $("#thing_dist_date").val(slider.slider("values")[1]);
+    $("#thing_data_1").val(slider.slider("values")[0]);
+    $("#thing_data_2").val(slider.slider("values")[1]);
   });
 </script>
 
@@ -46,8 +46,8 @@ $(document).ready(function() {
     <tbody>
       <% @distributions.each do |distribution| %>
         <tr>
-          <td><%= distribution.hidden_field :dist_date %></td>
-          <td><%= distribution.hidden_field :dist_date %></td>
+          <td><%= hidden_field :data_1 %></td>
+          <td><%= hidden_field :data_2 %></td>
           <td><%= distribution.note_id %></td>
           <td><%= distribution.quart_num %></td>
           <td><%= distribution.dist_date %></td>
