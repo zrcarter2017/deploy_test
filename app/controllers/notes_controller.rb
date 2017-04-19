@@ -19,6 +19,9 @@ class NotesController < ApplicationController
   def new
     @note = Note.new
 
+    Note.pickupamount = params[:investor_id] + '_' + params[:invest_date] + '_' params[:note_type]
+    Note.save!
+
   end
 
   # GET /notes/1/edit
