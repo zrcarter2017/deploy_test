@@ -5,8 +5,26 @@ table, th, td {
 </style>
 
 
+<script>
+$(document).ready(function() {
+    var slider = $("#the_slider").slider({
+        range: true,
+        min: 200,
+        max: 500,
+        values: [250, 450],
+        slide: function(event, ui) {
+            $("#distribution_data1").val(ui.values[0]);
+            $("#distribution_data2").val(ui.values[1]);
+        }
+    });
+    $("#distribution_data1").val(slider.slider("values")[0]);
+    $("#distribution_data2").val(slider.slider("values")[1]);
+});
+</script>
+
 <p id="notice"><%= notice %></p>
 
+<div id="the_slider"></div>
 
 <h1>Distributions</h1>
   <table id="distributions" class="display" cellspacing="0" width="100%">
@@ -28,6 +46,8 @@ table, th, td {
     <tbody>
       <% @distributions.each do |distribution| %>
         <tr>
+          <td><%= distribution.hidden_field :data_1 %></td>
+          <td><%= distribution.hidden_field :data_2 %></td>
           <td><%= distribution.note_id %></td>
           <td><%= distribution.quart_num %></td>
           <td><%= distribution.dist_date %></td>
@@ -46,5 +66,6 @@ table, th, td {
   </table>
 
 <br>
+
 
 <%= link_to 'New Distribution', new_distribution_path %>
