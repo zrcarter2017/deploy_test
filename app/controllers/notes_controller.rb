@@ -32,6 +32,7 @@ class NotesController < ApplicationController
     @note = Note.new(note_params)
 
     Note.note_id = (params[:investor_id].to_s).concat('_').concat(params[:invest_date].to_s).concat('_').concat(params[:note_type].to_s)
+    Note.save!
 
     respond_to do |format|
       if @note.save
