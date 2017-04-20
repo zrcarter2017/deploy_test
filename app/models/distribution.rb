@@ -1,4 +1,3 @@
 class Distribution < ApplicationRecord
-	# belongs_to :note
+	belongs_to :note
 end
-
