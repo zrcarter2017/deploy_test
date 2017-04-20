@@ -33,7 +33,7 @@ class NotesController < ApplicationController
 
     tmp_investor_id = note_params[:investor_id]
 
-    tmp_invest_date = note_params[:note][:invest_date]
+    tmp_invest_date = params[:note][:invest_date]
 
     tmp_note_type = note_params[:note_type]
 
