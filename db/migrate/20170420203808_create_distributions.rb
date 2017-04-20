@@ -1,7 +1,7 @@
 class CreateDistributions < ActiveRecord::Migration[5.0]
   def change
     create_table :distributions do |t|
-      t.references :note_id, foreign_key: true
+      t.references :note_id, foreign_key: false
       t.string :quart_num
       t.date :dist_date
       t.string :cum_sum_days
