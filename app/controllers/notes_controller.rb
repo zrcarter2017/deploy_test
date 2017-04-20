@@ -29,16 +29,7 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
 
-
-    @tmp_investor_id = params[:investor_id]
-
-    @tmp_invest_date = params[:invest_date]
-
-    @tmp_note_type = params[:note_type]
-
-    @note_id = [@tmp_investor_id, @tmp_invest_date, @tmp_note_type].join('_')
-
-    @note_id = @note.note_id
+    @note_id = Note.note_id
 
     @note = Note.new(note_params)
 
