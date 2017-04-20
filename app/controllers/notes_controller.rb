@@ -18,7 +18,6 @@ class NotesController < ApplicationController
   # GET /notes/new
   def new
     @note = Note.new
-
   end
 
   # GET /notes/1/edit
