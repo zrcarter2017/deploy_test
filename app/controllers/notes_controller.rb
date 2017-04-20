@@ -34,7 +34,7 @@ class NotesController < ApplicationController
     respond_to do |format|
       if @note.save
         script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
-        `python #{script_pat  h}`
+        `python #{script_path}`
         format.html { redirect_to @note, notice: 'Note was successfully created.' }
         format.json { render :show, status: :created, location: @note }
       else
