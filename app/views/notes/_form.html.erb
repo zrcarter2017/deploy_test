@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :invest_date %>
-    <%= f.text_field :invest_date %>
+    <%= f.date_select :invest_date %>
   </div>
   
   <div class="field">
@@ -31,9 +31,9 @@
     <%= f.number_field :dollar_invest %>
   </div>
 
-  <div class = "field">
+<!--   <div class = "field">
     <%= f.hidden_field :note_id, value: @note.note_id %>
-  </div>  
+  </div>   -->
 
   <div class="actions">
     <%= f.submit %>
