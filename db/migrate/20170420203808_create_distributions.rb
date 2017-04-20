@@ -6,9 +6,9 @@ class CreateDistributions < ActiveRecord::Migration[5.0]
       t.date :dist_date
       t.string :cum_sum_days
       t.string :quart_days
-      t.double :dollar
-      t.double :interest_rate
-      t.double :distribution
+      t.float :dollar
+      t.float :interest_rate
+      t.float :distribution
       t.string :paid
 
       t.timestamps
