@@ -31,7 +31,7 @@ class NotesController < ApplicationController
 
     @note = Note.new(note_params)
 
-    tmp_investor_id = params[:investor_id]
+    tmp_investor_id = 'params[:investor_id]'
 
     tmp_invest_date = params[:invest_date]
 
