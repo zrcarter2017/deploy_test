@@ -29,11 +29,12 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
 
-    @note_id = Note.note_id
+
 
     @note = Note.new(note_params)
 
-
+    @note_id = Note.note_id
+    
     respond_to do |format|
       if @note.save
         script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
