@@ -33,7 +33,7 @@ class NotesController < ApplicationController
     @tmp_investor_id = params[:investor_id]
     @tmp_invest_date = params[:invest_date]
     @tmp_note_type = params[:note_type]
-    @note_id = @tmp_investor_id + @tmp_invest_date + @tmp_note_type
+    @note_id = @tmp_investor_id.concat(@tmp_invest_date).concat(@tmp_note_type)
 
     respond_to do |format|
       if @note.save
