@@ -37,7 +37,7 @@ class NotesController < ApplicationController
 
     tmp_note_type = note_params[:note_type]
 
-    @note_id = [tmp_investor_id, tmp_invest_date, tmp_note_type].join('')
+    @note_id = [tmp_investor_id, tmp_invest_date, tmp_note_type].join('_')
 
     @note.note_id = @note_id  
 
