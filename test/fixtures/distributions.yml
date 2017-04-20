@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  note_id: 
+  note_id: one
   quart_num: MyString
   dist_date: 2017-04-20
   cum_sum_days: MyString
@@ -12,7 +12,7 @@ one:
   paid: MyString
 
 two:
-  note_id: 
+  note_id: two
   quart_num: MyString
   dist_date: 2017-04-20
   cum_sum_days: MyString

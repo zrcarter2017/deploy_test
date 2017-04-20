@@ -69,6 +69,6 @@ class DistributionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def distribution_params
-      params.require(:distribution).permit(:note_id, :quart_num, :dist_date, :cum_sum_days, :quart_days, :dollar, :interest_rate, :distribution, :paid)
+      params.require(:distribution).permit(:note_id_id, :quart_num, :dist_date, :cum_sum_days, :quart_days, :dollar, :interest_rate, :distribution, :paid)
     end
 end
