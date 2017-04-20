@@ -21,3 +21,46 @@
 </p>
 
 
+
+<h2>Note's Distributions</h2>
+  <body>
+      <table>
+        <thead>
+          <tr>
+            <th>Record</th>
+            <th>Note ID </th>
+            <th>Quarter Number </th>
+            <th>Distribution Date </th>
+            <th>Quarter Days </th>
+            <th>Dollar </th>
+            <th>Interest Rate</th>
+            <th>Distribution </th>
+            <th>Paid</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @note.distributions.each do |distribution| %>
+            <tr>
+              <td><%= link_to 'Show', distribution %><br>
+                <%= link_to 'Edit', edit_distribution_path(distribution) %><br>
+                <%= link_to 'Destroy', distribution, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+              <td><%= distribution.note_id %></td>
+              <td><%= distribution.quart_num %></td>
+              <td><%= distribution.dist_date %></td>
+              <td><%= distribution.quart_days %></td>
+              <td><%= distribution.dollar %></td>
+              <td><%= distribution.interest_rate %></td>
+              <td><%= distribution.distribution %></td>
+              <td><%= distribution.paid %></td>
+              <td><%= distribution.created_at %></td>
+              <td><%= distribution.updated_at %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to 'New Note', new_note_path %>
+  </body>
