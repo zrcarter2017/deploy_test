@@ -31,7 +31,7 @@
     <%= f.number_field :dollar_invest %>
   </div>
 
-  <%= f.hidden_field :note_id, params[:investor_id].to_s.concat('_').concat(params[:invest_date].to_s).concat('_').concat(params[:note_type].to_s) %>
+  <%= f.hidden_field :note_id, value: '12' %>
 
 
   <div class="actions">
