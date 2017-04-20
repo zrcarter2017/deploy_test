@@ -31,11 +31,11 @@ class NotesController < ApplicationController
 
     @note = Note.new(note_params)
 
-    tmp_investor_id = params[:investor_id].to_s
+    tmp_investor_id = note_params[:investor_id]
 
-    tmp_invest_date = params[:invest_date].to_s
+    tmp_invest_date = note_params.invest_date
 
-    tmp_note_type = params[:note_type].to_s
+    tmp_note_type = params.note_type
 
     @note_id = [tmp_investor_id, tmp_invest_date, tmp_note_type].join('')
 
