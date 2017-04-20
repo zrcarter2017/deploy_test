@@ -30,9 +30,9 @@ table, th, td {
       <tbody>
         <% @investors.each do |investor| %>
           <tr>
-            <td><%= link_to 'Show', investor %><br>
-              <%= link_to 'Edit', edit_investor_path(investor) %>
-              <%= link_to 'Destroy',investor, method: :delete, data: { confirm: 'Are you sure? In order to delete an investor record you must first delete the investors notes...' } %><br>
+            <td><%= link_to 'Show', investor %> | 
+              <%= link_to 'Edit', edit_investor_path(investor) %> | 
+              <%= link_to 'Destroy',investor, method: :delete, data: { confirm: 'Are you sure? In order to delete an investor record you must first delete the investors notes...' } %>
             </td>
             <td><%= investor.investor_id %></td>
             <td><%= investor.address %></td>
