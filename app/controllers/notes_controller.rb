@@ -30,11 +30,19 @@ class NotesController < ApplicationController
   def create
 
 
+    @tmp_investor_id = :investor_id
+
+    @tmp_invest_date = :invest_date
+
+    @tmp_note_type = :note_type
+
+    @note_id = [@tmp_investor_id, @tmp_invest_date, @tmp_note_type].join('_')
+
+    @note.note_id = @note_id
 
     @note = Note.new(note_params)
 
-    @note_id = Note.note_id
-    
+
     respond_to do |format|
       if @note.save
         script_path = File.join(Rails.root, "scripts", "dist_schedule.py")
