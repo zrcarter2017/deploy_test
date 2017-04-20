@@ -30,11 +30,11 @@ class NotesController < ApplicationController
   def create
 
 
-    @tmp_investor_id = :investor_id
+    @tmp_investor_id = params[:investor_id]
 
-    @tmp_invest_date = :invest_date
+    @tmp_invest_date = params[:invest_date]
 
-    @tmp_note_type = :note_type
+    @tmp_note_type = params[:note_type]
 
     @note_id = [@tmp_investor_id, @tmp_invest_date, @tmp_note_type].join('_')
 
