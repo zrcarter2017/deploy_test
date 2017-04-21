@@ -28,9 +28,7 @@ table, th, td {
   <tbody>
     <% @distributions.each do |distribution| %>
       <tr>
-        <td><%= link_to 'Show', distribution %>
-        <%= link_to 'Edit', edit_distribution_path(distribution) %>
-        <%= link_to 'Destroy', distribution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', distribution %></td>
         <td><%= distribution.note_id %></td>
         <td><%= distribution.quart_num %></td>
         <td><%= distribution.dist_date %></td>
@@ -48,3 +46,7 @@ table, th, td {
 <br>
 
 <%= link_to 'New Distribution', new_distribution_path %>
+
+
+<!-- <%= link_to 'Edit', edit_distribution_path(distribution) %>
+        <%= link_to 'Destroy', distribution, method: :delete, data: { confirm: 'Are you sure?' } %> -->
