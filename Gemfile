@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'scenic'
+gem 'scenic_mysql'
 
 gem 'jquery-ui-rails'
 
