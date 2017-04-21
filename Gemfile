@@ -36,8 +36,7 @@ gem 'jquery-datatables-rails', '~> 3.4.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-#jquery turbolinks -- trying to fix the refresh for jquery data tables issue
+gem 'turbolinks'
 gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
