@@ -1,0 +1,37 @@
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+
+<h1>Notifications</h1>
+    <table id="notifications" class="display" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th>Entity Name</th>
+          <th>Last Name </th>
+          <th>First Name</th>
+          <th>Invest Date</th>
+          <th>Email</th>
+          <th>Note Type</th>
+          <th>Dollar Invest</th>
+          <th>Notify Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @criterias.each do |notify| %>
+          <tr>
+            <td><%= notify.entity_name %></td>
+            <td><%= notify.last_name %></td>
+            <td><%= notify.first_name %></td>
+            <td><%= notify.invest_date %></td>
+            <td><%= notify.email %></td>
+            <td><%= notify.note_type %></td>
+            <td><%= notify.dollar_invest %></td>
+            <td><%= notify.notify_date %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<br>
