@@ -16,5 +16,4 @@
 //= require_tree .
 //= require dataTables/jquery.dataTables
 //= require jquery-ui
-//= require bootstrap-datepicker
 //= require turbolinks

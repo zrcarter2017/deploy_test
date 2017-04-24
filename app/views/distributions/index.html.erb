@@ -5,11 +5,13 @@ table, th, td {
 </style>
 
 
-<!-- script for date picker in distribution table -->
-<script type="text/javascript">
-  $('[data-behaviour~=datepicker]').datepicker();
-</script>
+<input type="text" name="daterange" value="Select Date Range..." />
 
+<script type="text/javascript">
+$(function() {
+    $('input[name="daterange"]').daterangepicker();
+});
+</script>
 
 <p id="notice"><%= notice %></p>
 
