@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
 gem 'scenic'
 gem 'scenic_mysql'
 
@@ -34,6 +35,8 @@ gem 'bcrypt', '~> 3.1.7'
 #datatable gems for data view
 gem 'jquery-datatables-rails', '~> 3.4.0'
 
+#date picker for rails 
+gem 'bootstrap-datepicker-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
