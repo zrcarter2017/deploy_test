@@ -36,7 +36,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-datatables-rails', '~> 3.4.0'
 
 #date picker for rails 
-# gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-datepicker-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

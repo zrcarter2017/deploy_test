@@ -3,4 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on "turbolinks:load", ->
-  $('#distributions').DataTable();
+  $('#distributions').DataTable({
+  'iDisplayLength': 100
+  });
