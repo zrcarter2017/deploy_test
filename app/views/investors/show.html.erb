@@ -78,18 +78,21 @@ table, th, td {
                 <%= link_to 'Edit', edit_note_path(note) %><br>
                 <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
               </td>
-              <td><%= @investor.first_name %></td>
-              <td><%= note.id %></td>
-              <td><%= note.investor_id %></td>
-              <td><%= note.invest_date %></td>
-              <td><%= note.note_type %></td>
-              <td><%= note.dollar_invest %></td>
-              <td><%= note.created_at %></td>
-              <td><%= note.updated_at %></td>
+              <% @note.distributions.each do |distribution| %>
+                <td><%= @investor.first_name %></td>
+                <td><%= note.id %></td>
+                <td><%= note.investor_id %></td>
+                <td><%= note.invest_date %></td>
+                <td><%= note.note_type %></td>
+                <td><%= note.dollar_invest %></td>
+                <td><%= note.created_at %></td>
+                <td><%= note.updated_at %></td>
+                <td><%= distribution.dist_date %></td>
+                <td><%= distribution.note_id %></td>
+              <% end %>
             </tr>
           <% end %>
         </tbody>
       </table>
       <%= link_to 'New Note', new_note_path %>
   </body>
-
