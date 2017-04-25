@@ -73,14 +73,12 @@ table, th, td {
 
         <tbody> 
           <% @investor.notes.each do |note| %>
-            <% @note.distributions.each do |dist_test| %>
               <tr>
                 <td><%= link_to 'Show', note %><br>
                   <%= link_to 'Edit', edit_note_path(note) %><br>
                   <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
                 </td>
                   <td><%= @investor.first_name %></td>
-                  <td><%= dist_test.dist_date %></td>
                   <td><%= note.id %></td>
                   <td><%= note.investor_id %></td>
                   <td><%= note.invest_date %></td>
@@ -89,7 +87,6 @@ table, th, td {
                   <td><%= note.created_at %></td>
                   <td><%= note.updated_at %></td>
               </tr>
-            <% end %>
           <% end %>
         </tbody>
       </table>
