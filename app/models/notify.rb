@@ -1,10 +1,12 @@
-class Notify < ApplicationRecord
-	self.table_name = 'criterias'
+module Report
+	class Notify < ApplicationRecord
+		self.table_name = 'criterias'
 
 
-	protected
+		protected
 
-    def readonly?
-    	true
-  	end
+	    def readonly?
+	    	true
+	  	end
+	end
 end
