@@ -1,7 +1,7 @@
- class NotifyController < ApplicationController
+  class NotifyController < ApplicationController
     
     def index
-      @notify_investors = Report::Notify
+      @notifications = Report::Notify.where
       respond_to do |format|
         format.html {}
       end
