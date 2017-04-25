@@ -77,6 +77,7 @@ table, th, td {
                 <%= link_to 'Edit', edit_note_path(note) %><br>
                 <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
               </td>
+              <td><%= @investor.first_name %></td>
               <td><%= note.id %></td>
               <td><%= note.investor_id %></td>
               <td><%= note.invest_date %></td>
