@@ -8,7 +8,7 @@
 	<body>
 
 	<% if current_user %>
-	  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %> | <%= link_to 'Home', investors_path  %> |<%= link_to 'New App User', '/signup' %> | <%= link_to 'New Investor', new_investor_path %> | <%= link_to 'Distributions', distributions_path %>
+	  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %> | <%= link_to 'Home', investors_path  %> |<%= link_to 'New App User', '/signup' %> | <%= link_to 'New Investor', new_investor_path %> | <%= link_to 'Distributions', distributions_path %> | <%= link_to 'Note Types', notetypes_path %>
 
 	<% end %>
 
