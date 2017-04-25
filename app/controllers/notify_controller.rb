@@ -1,9 +1,9 @@
   class NotifyController < ApplicationController
     
     def index
-      @notifications = Report::Notify.where
-      respond_to do |format|
-        format.html {}
+      @notifications = Report::Notify
+      # respond_to do |format|
+      #   format.html {}
       end
     end
 
