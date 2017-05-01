@@ -1,4 +1,4 @@
 class Distribution < ApplicationRecord
-	has_one :note
+	belongs_to :note
 	has_one :investor, :through => :note
 end
