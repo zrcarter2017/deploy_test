@@ -37,7 +37,6 @@ tr:hover{background-color:#f5f5f5}
     <tr>
       <th>Record Actions</th>
       <th>Note</th>
-      <th>First Name </th>
       <th>Quart num</th>
       <th>Dist date</th>
       <th>Cum sum days</th>
@@ -56,7 +55,6 @@ tr:hover{background-color:#f5f5f5}
           <%= link_to 'Edit', edit_distribution_path(distribution) %>
         <%= link_to 'Destroy', distribution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= distribution.note_id %></td>
-        <td><%= @note.investor.first_name %></td>
         <td><%= distribution.quart_num %></td>
         <td><%= distribution.dist_date%></td>
         <td><%= distribution.cum_sum_days %></td>
