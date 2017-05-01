@@ -1,4 +1,4 @@
 class Note < ApplicationRecord
-  has_one :investor
+  belongs_to :investor
   has_many :distributions
 end
