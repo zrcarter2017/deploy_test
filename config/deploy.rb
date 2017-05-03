@@ -1,14 +1,14 @@
 # config valid only for current version of Capistrano
 lock "3.8.0"
 
-set :application, "deploy_test"
-set :repo_url, "https://github.com/taylorturneriv/deploy_test.git"
+set :application, "capitalRaise"
+set :repo_url, "https://github.com/taylorturneriv/capitalRaise.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/deploy/deploy_test"
+set :deploy_to, "/home/deploy/capitalRaise"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
