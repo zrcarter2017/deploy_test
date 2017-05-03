@@ -6,6 +6,33 @@ import pandas as pd
 import pandas.util.testing as tm
 import dateutil.relativedelta
 
+def days_to_eoq(date):
+  if date.month == 1: 
+    days = 60 + 30 - (date.day)
+  if date.month == 2: 
+    days = 30 + 30 - (date.day)
+  if date.month == 3: 
+    days = 30 - (date.day)
+  if date.month == 4: 
+    days = 60 + 30 - (date.day)
+  if date.month == 5: 
+    days = 30 + 30 - (date.day)
+  if date.month == 6: 
+    days = 30 - (date.day)
+  if date.month == 7: 
+    days = 60 + 30 - (date.day)
+  if date.month == 8: 
+    days = 30 + 30 - (date.day)
+  if date.month == 9: 
+    days = 30 - (date.day)
+  if date.month == 10:
+    days = 60 + 30 - (date.day)
+  if date.month == 11: 
+    days = 30 + 30 - (date.day)
+  if date.month == 12: 
+    days = 30 - (date.day)
+  return days + 1
+
 
 def pandas_subquery(data_frame, note_idz_out):
     '''subset data frame for note_idz that are not in the 
@@ -27,7 +54,8 @@ def noteid_to_list(data_frame_column, append_to):
     '''convert sql column query of note_idz 
     to their own lists'''
     for k in data_frame_column:
-        append_to.append(k)
+  k = int(k)
+  append_to.append(k)
 
 def data_column_names(data_frame):
     '''renames the columns names of 
@@ -78,7 +106,7 @@ def master_for_loop(data_frame, note_type_append, date_append, id_append, iter_a
             interest_rate_append.append(float(data_frame.loc[data_frame['id'] == i, 'interest_rate'].iloc[0]))
             if j == 0:
                 tmp_date = data_frame.loc[data_frame['id'] == i, 'invest_date'].iloc[0]
-                calc_num = 60 + (30 - int(tmp_date.day))
+                calc_num = days_to_eoq(tmp_date)
                 day_append.append(calc_num)
             else: 
                 day_append.append(90)
@@ -87,26 +115,22 @@ def calc_true_distribution_date(append_to, bgn_date, cum_sum_days_num):
     """
         calc the true distribution date for each quarterly distribution 
         to REVA Funding, LLC investors.
-
-    --need to force dist_date to the fifteenth day (15) of the month for one 
-    --month after the last month of the quarter
-        select 
-            note_id, 
-            quart_num, 
-            dist_date, 
-            DATE_ADD(DATE_SUB(dist_date, INTERVAL DAY(dist_date) - 15 DAY), INTERVAL 1 MONTH) 
-        from views
     """
     for date in bgn_date:
         for day_num in cum_sum_days_num[0]:
             day = date + timedelta(days = int(str(day_num)))
-            var = day.day - 15
-            if day_num < 100:
+      var = day.day - 15
+            if day_num >= 60 and day_num < 90:
                 data_point = date + timedelta(days = int(str(day_num))) - timedelta(days = int(str(var))) + dateutil.relativedelta.relativedelta(months=1)
                 append_to.append(data_point)
-            elif day_num >= 100:
+            elif day_num >= 90:
                 data_point = date + timedelta(days = int(str(day_num))) - timedelta(days = int(str(var))) + dateutil.relativedelta.relativedelta(months=2)
                 append_to.append(data_point)
+      elif day_num < 60 and day_num > 30: 
+    data_point = date + timedelta(days = int(str(day_num))) - timedelta(days = int(str(var))) + dateutil.relativedelta.relativedelta(months=2)
+    append_to.append(data_point)
+      elif day_num < 30:
+    data_point = date + timedelta(days = int(str(day_num))) - timedelta(days = int(str(var))) + dateutil.relativedelta.relativedelta(months=0)
 
 def insert_dist_data(con, cursor, ziplist):
     """
@@ -114,13 +138,11 @@ def insert_dist_data(con, cursor, ziplist):
     database on allegiancy.us domain webserver
     """
     for row in ziplist:
-        # investor_dist
-        
         """
         originally with the id field in the table this is the sql insert statement
-        insert_stmt = ("INSERT INTO views (id, note_id, quart_num, dist_date, cum_sum_days, quart_days, dollar, interest_rate, distribution) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)")
+        insert_stmt = ("INSERT INTO dist (id, note_id, quart_num, dist_date, cum_sum_days, quart_days, dollar, interest_rate, distribution) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)")
         """
-        insert_stmt = ("INSERT INTO views (note_id, quart_num, dist_date, cum_sum_days, quart_days, dollar, interest_rate, distribution, paid, updated_at, created_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 'NO', NOW(), NOW())")
+        insert_stmt = ("INSERT INTO `distributions` (note_id, quart_num, dist_date, cum_sum_days, quart_days, dollar, interest_rate, distribution, paid, created_at, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 'NO', NOW(), NOW())")
         cursor.execute(insert_stmt, row)
         con.commit()
 
@@ -128,9 +150,9 @@ def insert_dist_data(con, cursor, ziplist):
 def pre_insert_sqlexecute(cursor):
     """
     check to ensure that the table exists in the database
-    """ 
+    """
     # investor_dist
-    cursor.execute("""CREATE TABLE IF NOT EXISTS `views` (
+    cursor.execute("""CREATE TABLE IF NOT EXISTS `distributions` (
           `note_id` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
           `quart_num` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
           `dist_date` Date,
@@ -140,8 +162,8 @@ def pre_insert_sqlexecute(cursor):
           `interest_rate` double DEFAULT NULL,
           `distribution` double DEFAULT NULL,
           `paid` varchar(255) DEFAULT NULL,
-          `updated_at` DateTime DEFAULT NULL,
-          `created_at` DateTime DEFAULT NULL
+          `updated_at` DateTime DEFAULT NOW(),
+          `created_at` DateTime DEFAULT NOW()
         ) ENGINE=MyISAM DEFAULT CHARSET=utf8""")
 
 
@@ -162,4 +184,4 @@ def cum_sum_pandas(pandas, append_to_cum_sum, rec_id, rec_type, rec_days):
     tmp['days'] = rec_days
     tmp['cum_sum'] = tmp.groupby(['id', 'note_type'])['days'].apply(lambda x: x.cumsum())
     append_to_cum_sum.append(tmp['cum_sum'].tolist())
-    
+
