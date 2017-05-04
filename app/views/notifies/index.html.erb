@@ -18,9 +18,11 @@
         <td><%= notify.entity_name %></td>
         <td><%= notify.first_name %></td>
         <td><%= notify.last_name %></td>
-        <td><%= link_to 'Show', notify %></td>
-        <td><%= link_to 'Edit', edit_notify_path(notify) %></td>
-        <td><%= link_to 'Destroy', notify, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= notify.invest_date %></td>
+        <td><%= notify.MATURITY_DATE %></td>
+        <td><%= notify.NOTIFY_DATE %></td>
+        <td><%= notify.note_type %></td>
+        <td><%= notify.dollar_invest %></td>
       </tr>
     <% end %>
   </tbody>
