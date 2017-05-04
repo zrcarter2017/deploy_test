@@ -10,4 +10,4 @@ SELECT
 FROM notes 
 LEFT JOIN investors on `notes`.`investor_id` = `investors`.`id` 
 where DATE_SUB(DATE_ADD(date(invest_date), INTERVAL (note_type * 12)*30 DAY), INTERVAL 30 DAY) > DATE_SUB(DATE_SUB(DATE_ADD(date(now()), INTERVAL (note_type * 12)*30 DAY), INTERVAL 30 DAY), INTERVAL 30 DAY) and DATE_SUB(DATE_ADD(date(invest_date), INTERVAL (note_type * 12)*30 DAY), INTERVAL 30 DAY) < DATE_ADD(DATE_SUB(DATE_ADD(date(now()), INTERVAL (note_type * 12)*30 DAY), INTERVAL 30 DAY), INTERVAL 30 DAY)
-ORDER BY DATE_SUB(DATE_ADD(date(now()), INTERVAL (note_type * 12) * 30 DAY), INTERVAL 30 DAY) ASC;
+ORDER BY DATE_SUB(DATE_ADD(date(invest_date), INTERVAL (note_type * 12) * 30 DAY), INTERVAL 30 DAY) ASC;
