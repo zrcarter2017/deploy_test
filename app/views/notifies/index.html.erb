@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Notifies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Entity name</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notifies.each do |notify| %>
+      <tr>
+        <td><%= notify.entity_name %></td>
+        <td><%= notify.first_name %></td>
+        <td><%= notify.last_name %></td>
+        <td><%= link_to 'Show', notify %></td>
+        <td><%= link_to 'Edit', edit_notify_path(notify) %></td>
+        <td><%= link_to 'Destroy', notify, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Notify', new_notify_path %>

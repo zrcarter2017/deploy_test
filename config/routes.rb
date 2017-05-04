@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resources :criteria
+  resources :notifies
   resources :distributions
   resources :notetypes
   resources :investors
   resources :notes
-  resources :notify
 
   root "investors#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

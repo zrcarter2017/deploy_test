@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Entity name:</strong>
+  <%= @notify.entity_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @notify.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @notify.last_name %>
+</p>
+
+<%= link_to 'Edit', edit_notify_path(@notify) %> |
+<%= link_to 'Back', notifies_path %>
