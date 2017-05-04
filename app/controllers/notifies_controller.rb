@@ -1,4 +1,6 @@
 class NotifiesController < ApplicationController
+  before_filter :authorize
+
   before_action :set_notify, only: [:show, :edit, :update, :destroy]
 
   # GET /notifies
