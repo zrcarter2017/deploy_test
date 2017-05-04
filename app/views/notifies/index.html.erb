@@ -5,9 +5,11 @@
 <table id="notifications" name="notifications">
   <thead>
     <tr>
-      <th>Entity name</th>
+      <th>Rep </th>
+      <th>Broker </th>
       <th>First name</th>
       <th>Last name</th>
+      <th>Entity name</th>
       <th>Invest Date </th>
       <th>Maturity Date </th>
       <th>Notify Date </th>
@@ -19,9 +21,11 @@
   <tbody>
     <% @notifies.each do |notify| %>
       <tr>
-        <td><%= notify.entity_name %></td>
+        <td><%= notify.rep %></td>
+        <td><%= notify.broker %></td>
         <td><%= notify.first_name %></td>
         <td><%= notify.last_name %></td>
+        <td><%= notify.entity_name %></td>
         <td><%= notify.invest_date %></td>
         <td><%= notify.MATURITY_DATE %></td>
         <td><%= notify.NOTIFY_DATE %></td>
