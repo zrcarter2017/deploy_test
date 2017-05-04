@@ -11,7 +11,7 @@ mysql connection
 """
 
 # mysql connection to localhost
-mysqlDB = mysql.connector.connect(host = 'localhost', user='root', password = 'password', database='production')
+mysqlDB = mysql.connector.connect(host = 'your_host', user='your_user', password = 'your_password', database='your_db')
 
 
 # pull data from note table
