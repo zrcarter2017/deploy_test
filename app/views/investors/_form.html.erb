@@ -66,6 +66,10 @@
     <%= f.text_field :broker %>
   </div>
 
+  <div class="field">
+    <%= f.label :active %>
+    <%= f.select :active, [['YES','YES'],['NO','NO']] %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
