@@ -87,6 +87,6 @@ class NotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
-      params.require(:note).permit(:investor_id, :invest_date, :note_type, :dollar_invest, :note_id)
+      params.require(:note).permit(:investor_id, :invest_date, :note_type, :dollar_invest, :note_id, :active)
     end
 end
