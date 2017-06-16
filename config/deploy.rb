@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock "3.8.0"
+lock "3.8.1"
 
 set :application, "deploy_test"
 set :repo_url, "https://github.com/taylorturneriv/deploy_test.git"
