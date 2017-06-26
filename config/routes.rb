@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :investors
   resources :notes
 
-  get "*path" => redirect("https://159.203.80.148/%{path}"), :constraints => {:protocol => "http://"}
+  #get "*path" => redirect("https://159.203.80.148/%{path}"), :constraints => {:protocol => "http://"}
   #get "*path" => redirect("https://159.203.80.148/%{path}"), :constraints => {:subdomain => ""}
 
   root "investors#index"
