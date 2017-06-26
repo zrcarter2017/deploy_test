@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "*path" => redirect("https://159.203.80.148/%{path}"), :constraints => {:protocol => "http://"}
   get "*path" => redirect("https://159.203.80.148/%{path}"), :constraints => {:subdomain => ""}
 
-  root "investors#index"
+  #root "investors#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
