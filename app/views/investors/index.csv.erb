@@ -3,6 +3,6 @@
 <%= CSV.generate_line headers %>
 
 <%- @investors.each do |investor| -%>
-<%= CSV.generate_line([investor.id, investor.investor_id, investor.address, investor.city, investor.state, investor.zip, investor.email, investor.entity_name, investor.first_name, investor.last_name, investor.rep, investor.broker, investor.created_at, investor.update_at, investor.active]).html_safe -%>
+<%= CSV.generate_line([investor.id, investor.investor_id, investor.address, investor.city, investor.state, investor.zip, investor.email, investor.entity_name, investor.first_name, investor.last_name, investor.rep, investor.broker, investor.created_at, investor.updated_at, investor.active]).html_safe -%>
 
 <%- end -%>
