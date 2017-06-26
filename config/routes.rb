@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :investors
   resources :notes
 
-  match "*path" => redirect("https://159.203.80.148/%{path}"), :constraints => {:protocol => "http://"}
-  match "*path" => redirect("https://159.203.80.148/%{path}"), :constraints => {:subdomain => ""}
+  get "*path" => redirect("https://159.203.80.148/%{path}"), :constraints => {:protocol => "http://"}
+  get "*path" => redirect("https://159.203.80.148/%{path}"), :constraints => {:subdomain => ""}
 
   root "investors#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
