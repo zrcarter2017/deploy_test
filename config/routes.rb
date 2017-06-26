@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :investors
   resources :notes
 
-  root "investors#index"
+  redirect_to :protocol => 'https://',
+              :controller => 'investors',
+              :action => 'index'
+  #root "investors#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
