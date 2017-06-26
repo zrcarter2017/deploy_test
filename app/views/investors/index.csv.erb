@@ -1,8 +1,6 @@
 <%#= link_to 'Download CSV list', properties_path(format: :csv) %>
 <%- headers = ['id', 'investor_id', 'address', 'city', 'state', 'zip', 'email', 'entity_name', 'first_name', 'last_name', 'rep', 'broker', 'created_at', 'updated_at', 'active'] -%>
 <%= CSV.generate_line headers %>
-
 <%- @investors.each do |investor| -%>
 <%= CSV.generate_line([investor.id, investor.investor_id, investor.address, investor.city, investor.state, investor.zip, investor.email, investor.entity_name, investor.first_name, investor.last_name, investor.rep, investor.broker, investor.created_at, investor.updated_at, investor.active]).html_safe -%>
-
 <%- end -%>
