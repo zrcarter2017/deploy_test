@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :investors
   resources :notes
 
-  redirect_to :protocol => 'https://',
+  root :protocol => 'https://',
               :controller => 'investors',
               :action => 'index'
   #root "investors#index"
