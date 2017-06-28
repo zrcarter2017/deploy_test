@@ -1,5 +1,9 @@
 <h1>REVA Funding Visualizations</h1>
 
+<h5> New Investor </h5>
 <%= line_chart Investor.group_by_day(:created_at).count %>
 
+<br>
+<h5> Count of Note Types </h5>
 <%= pie_chart Note.group(:note_type).count %>
+
