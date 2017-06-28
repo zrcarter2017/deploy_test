@@ -1,13 +1,12 @@
 <h1>REVA Funding Visualizations</h1>
 
-<h5> New Investor </h5>
+<br>
+<h5> Count Note Types </h5>
+<%= pie_chart Note.group(:note_type).count %>
+
+<h5> New Investors over Time </h5>
 <%= line_chart Investor.group_by_day(:created_at).count %>
 
 <br>
-<h5> Count of Note Types </h5>
-<%= pie_chart Note.group(:note_type).count %>
-
-
-<br>
-<h5> Distribution of Note Types</h5>
-<%= column_chart Note.group(:note_type).count %>
+<h5> Note Maturities </h5>
+<%= line_chart Note.group_by_week(:created_at).count %>
