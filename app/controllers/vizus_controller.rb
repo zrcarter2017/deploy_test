@@ -1,4 +1,6 @@
 class VizusController < ApplicationController
+  
+  before_filter :authorize
   before_action :set_vizu, only: [:show, :edit, :update, :destroy]
 
   # GET /vizus
