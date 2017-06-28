@@ -4,15 +4,15 @@
 
 <br>
 
-<h5>Count of Note Types</h5>
-  <div>
-    <%= pie_chart Note.group(:note_type).count %>
-  </div>
-
-
 <h5> Distribution of Maturities </h5>
   <div>
     <%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).count %>
+  </div>
+  
+
+<h5>Count of Note Types</h5>
+  <div>
+    <%= pie_chart Note.group(:note_type).count %>
   </div>
 
 
