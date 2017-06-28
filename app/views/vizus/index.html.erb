@@ -19,7 +19,7 @@
 <h7> 2.0 = 2Year </h7>
 <h7> 3.0 = 3Year </h7>
   <div>
-    <%= pie_chart Note.group(:note_type).count %>
+    <%= bar_chart Note.group(:note_type).count %>
   </div>
 
 
