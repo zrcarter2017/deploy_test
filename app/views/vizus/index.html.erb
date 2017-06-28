@@ -4,10 +4,16 @@
 
 <br>
 <h5> Count Note Types </h5>
-<%= bar_chart Note.group(:note_type).count %>
+<div align = "left">
+  <%= bar_chart Note.group(:note_type).count %>
+</div>
 
 <h5> Distribution of Expirations </h5>
-<%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).count %>
+<div align = "right">
+  <%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).count %>
+</div>
 
 <h5> New Investors over Time </h5>
-<%= line_chart Investor.group_by_week(:created_at).count %>
+<div>
+  <%= line_chart Investor.group_by_week(:created_at).count %>
+</div>
