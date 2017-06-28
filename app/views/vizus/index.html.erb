@@ -7,7 +7,7 @@
 <%= bar_chart Note.group(:note_type).count %>
 
 <h5> Distribution of Expirations </h5>
-<%= column_chart Vizu.group_by_week(:MATURITY_DATE).count %>
+<%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).count %>
 
 <h5> New Investors over Time </h5>
 <%= line_chart Investor.group_by_week(:created_at).count %>
