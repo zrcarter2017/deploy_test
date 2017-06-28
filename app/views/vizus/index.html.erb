@@ -4,12 +4,19 @@
 
 <br>
 <h5> Count Note Types </h5>
-<div align = "left" style="width:30%; height:100px">
-  <%= bar_chart Note.group(:note_type).count %>
+<div>
+  <div align = "left" style="width:30%; height:100px">
+    <%= bar_chart Note.group(:note_type).count %>
+  </div>
+
+  <div align = "right" style="width:50%; height: 125px">
+    <%= pie_chart Note.group(:note_type).count %>
+  </div>
+
 </div>
 
 <h5> Distribution of Expirations </h5>
-<div align = "right" style="width:30%; height:100px">
+<div>
   <%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).count %>
 </div>
 
