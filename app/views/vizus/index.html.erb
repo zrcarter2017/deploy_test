@@ -2,7 +2,8 @@
 
 <br>
 <h5> Count Note Types </h5>
-<%= pie_chart Note.group(:note_type).count %>
+<%= bar_chart Note.group(:note_type).count %>
 
 <h5> New Investors over Time </h5>
 <%= line_chart Investor.group_by_week(:created_at).count %>
+
