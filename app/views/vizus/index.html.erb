@@ -7,3 +7,6 @@
 <h5> New Investors over Time </h5>
 <%= line_chart Investor.group_by_week(:created_at).count %>
 
+<br>
+<h5> Geographical Distribution of Investors </h5>
+<%= geo_chart Investor.group(:state).count %>
