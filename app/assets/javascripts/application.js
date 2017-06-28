@@ -17,3 +17,5 @@
 //= require dataTables/jquery.dataTables
 //= require jquery-ui
 //= require turbolinks
+//= require Chart.bundle
+//= require chartkick
