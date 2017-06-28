@@ -10,4 +10,4 @@
 
 <br>
 <h5> Distribution of Note Types</h5>
-<%= column_chart Note.group(:note_type, format: "%a").count %>
+<%= column_chart Note.group(:note_type).count %>
