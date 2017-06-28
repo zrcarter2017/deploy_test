@@ -7,3 +7,7 @@
 <h5> Count of Note Types </h5>
 <%= pie_chart Note.group(:note_type).count %>
 
+
+<br>
+<h5> Distribution of Note Types</h5>
+<%= column_chart Note.group(:note_type, format: "%a").count %>
