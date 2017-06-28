@@ -8,7 +8,7 @@
     <%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).count%>
   </div>
 
-<h5> Sum Dollar Amount by Maturity </h5>
+<h5> Sum Dollar Amount by Maturity by Quarter </h5>
   <div> 
     <%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).sum(:dollar_invest) %>
   </div>
