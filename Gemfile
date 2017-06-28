@@ -7,9 +7,13 @@ end
 
 gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 
-gem "chartkick"
+gem 'chartkick'
+
+gem 'groupdate'
+
 
 gem 'scenic'
+
 gem 'scenic_mysql'
 
 gem 'jquery-ui-rails'
