@@ -4,9 +4,14 @@
 
 <br>
 
-<h5> Distribution of Maturities </h5>
+<h5>Count of Maturities </h5>
   <div>
-    <%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).count, stacked: true%>
+    <%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).count%>
+  </div>
+
+<h5>Sum Dollar Amount by Maturity </h5>
+  <div> 
+    <%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).sum(:dollar_invest) %>
   </div>
 
 
