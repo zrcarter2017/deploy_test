@@ -83,10 +83,7 @@ tr:hover{background-color:#f5f5f5}
         <tbody> 
           <% @investor.notes.each do |note| %>
               <tr>
-                <td><%= link_to 'Show', note %><br>
-                  <%= link_to 'Edit', edit_note_path(note) %><br>
-                  <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </td>
+                  <td><%= link_to 'Show', note %></td>
                   <td><%= note.id %></td>
                   <td><%= note.investor_id %></td>
                   <td><%= note.invest_date %></td>
