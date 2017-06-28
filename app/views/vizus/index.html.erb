@@ -5,4 +5,4 @@
 <%= pie_chart Note.group(:note_type).count %>
 
 <h5> New Investors over Time </h5>
-<%= line_chart Investor.group_by_quarter(:created_at).count %>
+<%= line_chart Investor.group_by_month(:created_at).count %>
