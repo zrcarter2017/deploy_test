@@ -3,20 +3,26 @@
 <h1>REVA Funding Visualizations</h1>
 
 <br>
+
 <h5> Count Note Types </h5>
-<div>
-  <div align = "center" style="width:30%; height:100px">
-    <%= bar_chart Note.group(:note_type).count %> <%= pie_chart Note.group(:note_type).count %>
+  <div>
+    <%= bar_chart Note.group(:note_type).count %>
   </div>
 
-</div>
+
+<h5> Distribution of Maturities </h5>
+  <div>
+    <%= pie_chart Note.group(:note_type).count %>
+  </div>
+
 
 <h5> Distribution of Expirations </h5>
-<div>
-  <%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).count %>
-</div>
+  <div>
+    <%= column_chart Vizu.group_by_quarter(:MATURITY_DATE).count %>
+  </div>
+
 
 <h5> New Investors over Time </h5>
-<div>
-  <%= line_chart Investor.group_by_week(:created_at).count %>
-</div>
+  <div>
+    <%= line_chart Investor.group_by_week(:created_at).count %>
+  </div>
