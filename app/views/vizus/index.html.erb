@@ -5,12 +5,8 @@
 <br>
 <h5> Count Note Types </h5>
 <div>
-  <div align = "left" style="width:30%; height:100px">
-    <%= bar_chart Note.group(:note_type).count %>
-  </div>
-
-  <div align = "right" style="width:50%; height: 125px">
-    <%= pie_chart Note.group(:note_type).count %>
+  <div align = "center" style="width:30%; height:100px">
+    <%= bar_chart Note.group(:note_type).count %> <%= pie_chart Note.group(:note_type).count %>
   </div>
 
 </div>
