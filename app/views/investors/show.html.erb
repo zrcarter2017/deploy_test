@@ -84,7 +84,7 @@ tr:hover{background-color:#f5f5f5}
           <% @investor.notes.each do |note| %>
               <tr>
                   <td><%= link_to 'Show', note %> <br>
-                      <%= link_to 'Edit' note.edit_note %></td>
+                      <%= link_to 'Edit' edit_note %></td>
                   <td><%= note.id %></td>
                   <td><%= note.investor_id %></td>
                   <td><%= note.invest_date %></td>
