@@ -18,4 +18,5 @@
 //= require jquery-ui
 //= require turbolinks
 //= require Chart.bundle
+//= require highcharts
 //= require chartkick
